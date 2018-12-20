@@ -3,24 +3,25 @@ In this repository, I will tackle the issue of classying the 13M~ documents of t
 ### In order to use the notebook or the python script, the data should be unzipped in a folder called "data". This folder should also contain the file "Tobacco3482.csv" containing the meta-data of the dataset
 #### The folder should be organized like this 
 data/
-	Advertisement/
 
-	Email/
+  Advertisement/
 
-	Form/
+  Email/
 
-	Letter/
+  Form/
 
-	Memo/
+  Letter/
 
-	News/
+  Memo/
 
-	Note/
+  News/
 
-	Report/
+  Note/
 
-	Resume/
+  Report/
 
-	Scientific/
+  Resume/
 
-	Tobacco3482.csv
+  Scientific/
+
+  Tobacco3482.csv
