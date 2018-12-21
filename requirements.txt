@@ -1,0 +1,8 @@
+pandas==0.23.0
+matplotlib==2.2.2
+nltk==3.3
+gensim==3.5.0
+Keras==2.2.4
+numpy==1.14.3
+scikit_learn==0.20.2
+tensorflow
