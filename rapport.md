@@ -53,18 +53,18 @@ Au vu des ces erreurs mais aussi au fait que les données contiennent aussi beau
 ### 2.1) Etablissement d'une baseline 
 
 Afin de rendre compte de la difficulté du problème et pouvoir présenter des améliorations, nous allons utiliser une méthode classique pour la classification de texte : Bayes naïf. Une méthode classique est d'abord de pré-traiter les données en enlevant la ponctuation. Ensuite afin d'obtenir une représentation vectorielle des données, comme dit précedemment je n'utiliserais pas d'embedding externe mais la représentation par tokens dans lequel chaque document est représenté par un vecteur d'une taille de **75956** (taille du vocabulaire) avec des 1 dans les composantes correspondants aux mots présents dans le document. 
-Après avoir réalisé cette transformation, on peut entraîne le modèle Baiyes naïf sur des données d'entraînement (x_\train\_counts) et on le teste sur un jeu de test (x\_test\_counts). 
+Après avoir réalisé cette transformation, on peut entraîner le modèle Baiyes naïf sur des données d'entraînement (x_\train\_counts) et on le teste sur un jeu de test (x\_test\_counts). 
 Voilà les résultats :
 
 ![alt text](https://github.com/Rouen-NLP/final-lab-Datavoore/blob/master/Results_Bayes.png "Résultats Bayes")
 
-Nous pouvons voir que le score f1 est de 65%. On peut remarquer un certain déséquilibre dans la matrice de confusion, les classes les moins représentées semblent être souvent classifiées comme celles étant les plus représentées. Par exemple la classe Note n'as eu aucun de ses représentants bien classifiés. 
+Nous pouvons voir que le score f1 est de 70%. On peut remarquer un certain déséquilibre dans la matrice de confusion, les classes les moins représentées semblent être souvent classifiées dans les classes les olus représentées. Par exemple la classe Note n'as eu aucun de ses représentants bien classifiés. 
 Ces résultats permettent de dire que la tâche n'est pas trop complexe puisque la prédiction aléatoire donnerait aux alentours de 10% de précision et que Bayes atteint quasimment 70%. Toutefois il est possible d'améliorer notre classifieur. 
-Une méthode donnant de bon résultats en NLP dernièrement sont les réseaux de neurones. Nous allons donc tenter d'appliquer un réseau de neurones au même données afin de voir si un amélioration est observée. 
+Une méthode donnant de bon résultats en NLP dernièrement sont les réseaux de neurones. Nous allons donc tenter d'appliquer un réseau de neurones au mêmes données afin de voir si une amélioration est observée. 
 
 ### 2.2) Amélioration par réseau de neurones
 
-J'ai choisi une architecture dense classique que j'ai essayé de conserver peu profonde dû au manque de données. Il y aura donc une couche dense contenant 512 neurones en entrée reliées à une couche de décision avec une fonction d'activation softmax. On prendra la loss categorical_crossentropy de keras. On gardera le modèle avec la loss la plus basse. Voilà la courbe d'apprentissage du modèle, sur lequel le modèle conservé est indiqué par une étoile :
+J'ai choisi une architecture dense classique que j'ai essayé de conserver peu profonde dû au manque de données. Il y aura donc une couche dense contenant 512 neurones en entrée reliées à une couche de décision avec une fonction d'activation softmax. On prendra la loss categorical_crossentropy de keras. On gardera le modèle avec la loss la plus basse. Voilà la courbe d'apprentissage du modèle, sur laquelle le modèle conservé est indiqué par une étoile :
 
 ![alt text](https://github.com/Rouen-NLP/final-lab-Datavoore/blob/master/Graph_learning.png "Courbe d'apprentissage du réseau")
 
@@ -73,8 +73,13 @@ On peut tester le modèle sur le même jeu de test que celui pour Bayes. Voilà 
 
 ![alt text](https://github.com/Rouen-NLP/final-lab-Datavoore/blob/master/Results_NN.png "Résultats Neural network")
 
-Par rapport au Bayes naïf le gain de performance est notable (~15%). On peut aussi remarquer que la matrice de confusion est beaucoup plus équilibrées. Les quelques erreurs sont bien réparties entre les classes.
+Par rapport au Bayes naïf le gain de performance est notable (~15%). On peut aussi remarquer que la matrice de confusion est beaucoup plus équilibrée. Les quelques erreurs sont bien réparties entre les classes.
+On peut conclure que l'architecture utilisant un réseau de neurones est plus adaptée à ce problème que l'utilisation d'un Bayes naïf.
 
 ### 2.3) Conclusion
 
+Lors de la partie précédente, nous avons pû voir que nous avons réussi à bien améliorer les performances par rapport à la baseline posée par l'utilisation Bayes naïf. Toutefois il est encore possible de gagner en perfomance.
+Une première manière serait d'améliorer les données grâce à, par exemple, l'utilisation d'un modèle de langue afin de traiter les erreurs de transcription automatique décrites dans la partie 1.2. 
+Il est aussi possible de prendre en compte les images numérisées des documents grâce à l'utilisation d'SVMs ou de réseaux de neurones convolutionnels afin d'ajouter des caractéristiques en entrée du classifieur final.
+Enfin, il est possible de ne pas utiliser l'approche bag of words et de d'utiliser l'aspect séquentiel des documents en utilisant notamment des réseaux récurrents comme ceux utilisant les LSTMs. 
  
