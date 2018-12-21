@@ -88,5 +88,5 @@ Une première manière serait d'améliorer les données grâce à, par exemple, 
 
 Il est aussi possible de prendre en compte les images numérisées des documents grâce à l'utilisation d'SVMs ou de réseaux de neurones convolutionnels afin d'ajouter des caractéristiques en entrée du classifieur final.
 
-Enfin, il est possible de ne pas utiliser l'approche bag of words et de d'utiliser l'aspect séquentiel des documents en utilisant notamment des réseaux récurrents comme ceux utilisant les LSTMs. 
+Enfin, il est possible de ne pas utiliser l'approche bag of words et de d'utiliser l'aspect séquentiel des documents en utilisant notamment des réseaux récurrents tels que les LSTMs. 
  
