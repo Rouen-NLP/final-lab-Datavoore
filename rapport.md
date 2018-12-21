@@ -34,7 +34,9 @@ Pour ce travail pratique, nous avons à disposition 3482 documents répartis dan
 
 Nous pouvons tracer un camembert pour visualiser la distribution des classes dans les données. Voilà le graphique : 
 
-IMAGE
+![alt text](https://github.com/Rouen-NLP/final-lab-Datavoore/blob/master/Camenbert.png "Diagramme camembert fréquences classes")
+
+
 
  
 
