@@ -2,15 +2,15 @@
 
 ##### Robin Niel
 
-## 1) Problem description
+## 1) Description du problème 
 
-### 1.1) Context
+### 1.1) Contexte
 
-In the 60s, more and more studies were showing the negative effect of tobacco on the health of the people. In order to keep their profit going, tobacco companies decided to organize and create a national public relation campaign in order to counter the different proves of the danger of tobacco. A trial was intended by the U.S governement against those companies. During this trial, more than 14 millions documents has been collected and numerized. Those documents can be classified in 10 different classes. Our task in this practical work is to create a machine learning model able to classify those documents. 
+Dans les années 60, de plus en plus d'études commençaient à montrer les effets nocifs du tabac sur la santé. Afin de limiter la perte de profit liée à la publication de ces études, les fabricants de tabac décidèrent de s'organiser et de créer une campagne nationale afin d'influencer l'opinion publique sur le sujet du tabac. S'en étant aperçu, l'État Américain décida de poursuivre en justice ces entreprises. Dans le cadre de ce procès, plus de 14 millions de documents ont été collectés et numérisés. Notre tâche pour ce travail pratique est de créer un modèle d'apprentissage automatique capable d'associer cesdits documents à leur catégorie. 
 
-### 1.2) The data 
+### 1.2) Les données
 
-For this practical work, we have at our disposal 3482 documents distributed over 10 different classes which are the following : 
+Pour ce travail pratique, nous avons à disposition 3482 documents répartis dans 10 différentes catégories, qui sont les suivantes (ici en anglais, comme dans les données) :
 
 * Advertisement 
 
@@ -32,7 +32,7 @@ For this practical work, we have at our disposal 3482 documents distributed over
 
 * Scientific 
 
-We can plot a pie chart in order to see the distribution of the different classes in the data. Here is the pie chart :
+Nous pouvons tracer un camembert pour visualiser la distribution des classes dans les données. Voilà le graphique : 
 
 IMAGE
 
